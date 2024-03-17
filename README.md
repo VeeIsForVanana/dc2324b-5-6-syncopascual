@@ -1,4 +1,4 @@
-# Assignment 3: Wonkier Button
+# Assignment 5+6: Wonkier Button
 
 Edit the `src/routes/WonkierButton.svelte` component and a `src/routesContainer.svelte` component that have the following behaviors below.
 Note that `wonkier-button`, `lock-button`, and `text-input`, `container` refers to the HTML elements with the said `data-testid`.
