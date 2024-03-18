@@ -19,11 +19,14 @@ Note that `wonkier-button`, `lock-button`, and `text-input`, `container` refers 
     - For example, when the text on the `wonkier-button` is `Fizz 3`, typing `Buzz` on `text-input` will change the `wonkier-button`'s text to `Buzz 3` and its class to `Buzz`.
     - Another example, when the text on the `wonkier-button` is `Fizz 3`, typing `Default` on `text-input` will change the `wonkier-button`'s text to `3` and its class to `Default`.
 
-1. Clicking the `lock-button` will change the `wonkier-button`'s class to `locked` and disable `wonkier-button`.
+1. Clicking the `lock-button` will change the `wonkier-button`'s class to `locked` and disable the `wonkier-button`.
     - The `lock-button` must not affect the `wonkier-button`'s text.
-    - Clicking the `lock-button` again will "unlock" the `wonkier-button` and allow changes to the `wonkier-button`'s class. 
+    - Clicking the `lock-button` again will unlock the `wonkier-button` and allow changes to the `wonkier-button`'s class. 
 
 1. The `WonkierButton.svelte` component must render an additional element `<p>FizzBuzz!</p>` inside the `<Container>` tag when the `wonkier-button`'s text starts with `FizzBuzz`. 
-   
+
+### Demonstration of the Output
+![2024-03-1811-46-53-ezgif com-crop](https://github.com/up-csi-dev-training/dc2324b-5-6/assets/86727472/0cd9de37-21b3-4afe-898c-89b20911defc)
+
 > [!IMPORTANT]
 > Please only edit the `src/routes/WonkierButton.svelte` and `src/routes/Container.svelte` files.
