@@ -1,0 +1,51 @@
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Bind
+      id: bind
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Bind
+        setup-command: npm install
+        command: npm test bind
+        timeout: 5
+        max-score: 40
+    - name: Class
+      id: class
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Class
+        setup-command: npm install
+        command: npm test class
+        timeout: 5
+        max-score: 40
+    - name: Slot
+      id: slot
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Slot
+        setup-command: npm install
+        command: npm test slot
+        timeout: 5
+        max-score: 20
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        BIND_RESULTS: "${{steps.bind.outputs.result}}"
+        CLASS_RESULTS: "${{steps.class.outputs.result}}"
+        SLOT_RESULTS: "${{steps.slot.outputs.result}}"
+      with:
+        runners: bind,class,slot
